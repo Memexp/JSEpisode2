@@ -18,15 +18,19 @@
  *       pairs() returns []
  ****************************************************************/
 function pairs(names) {
-  parisList = [];
-  while (names.length > 0) {
-    if (names.length === 1) {
-      parisList.push([names.getRandom()]);
-    } else {
-      parisList.push([names.getRandom(), names.getRandom()]);
+  let parisList = [];
+  if (names && names.length > 0) {
+    while (names.length > 0) {
+      if (names.length === 1) {
+        parisList.push([names.getRandom()]);
+      } else {
+        parisList.push([names.getRandom(), names.getRandom()]);
+      }
     }
+    return parisList;
+  } else {
+    return [];
   }
-  return parisList;
 }
 
 module.exports = pairs;
